@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { otpPattern } from 'src/app/common/regularExpressions';
 import { verifyOtp } from 'src/app/model/usermodel';
 import { MessageToasterService } from 'src/app/services/message-toaster.service';
-import { UserService } from 'src/app/user.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-otp',

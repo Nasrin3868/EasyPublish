@@ -23,7 +23,7 @@ import { EmailForForgetPasswordComponent } from './components/email-for-forget-p
 import { NewPasswordComponent } from './components/new-password/new-password.component';
 import { AppHighlightDirective } from './app-highlight.directive';
 import { CustomPipe } from './custom.pipe';
-import { TokenInterceptor } from './auth.interceptor';
+import { TokenInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [

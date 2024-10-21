@@ -1,16 +1,16 @@
 import { Body, Controller, HttpException, HttpStatus, Param, Post, Get, UploadedFile, UseFilters, UseInterceptors, HttpCode, Delete } from '@nestjs/common';
-import { UserService } from './user.service';
-import { registrationDto } from './dto/registration.dto';
-import { responseDto } from './dto/response.dto';
+import { UserService } from '../service/user.service';
+import { registrationDto } from '../dto/registration.dto';
+import { responseDto } from '../dto/response.dto';
 import { HttpStatusCodes } from 'src/common/customStatusCode';
 import { CustomHttpExceptionFilter } from 'src/common/customHttpExceptionFilter';
-import { verifyOtpDto } from './dto/verifyOtp.dto';
-import { loginDto } from './dto/login.dto';
-import { blogDto } from './dto/blog.dto';
+import { verifyOtpDto } from '../dto/verifyOtp.dto';
+import { loginDto } from '../dto/login.dto';
+import { blogDto } from '../dto/blog.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { memoryStorage } from 'multer';
-import { displayBlogDto } from './dto/displayBlog.dto';
-import { userDto } from './dto/user.dto';
+import { displayBlogDto } from '../dto/displayBlog.dto';
+import { userDto } from '../dto/user.dto';
 
     @Controller('user')
     @UseFilters(new CustomHttpExceptionFilter)

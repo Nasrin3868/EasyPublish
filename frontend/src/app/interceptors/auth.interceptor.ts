@@ -3,7 +3,8 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse
 import { Observable, throwError } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { UserService } from './user.service'; // To handle refresh token logic
+import { UserService } from '../services/user.service'; 
+
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {

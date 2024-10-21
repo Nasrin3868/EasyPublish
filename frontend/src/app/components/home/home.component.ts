@@ -1,7 +1,7 @@
 import { Component, ContentChild, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { blogResponse } from 'src/app/model/usermodel';
-import { UserService } from 'src/app/user.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-home',

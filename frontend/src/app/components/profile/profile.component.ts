@@ -5,7 +5,7 @@ import { namePattern } from 'src/app/common/regularExpressions';
 import { profileData, userDetails } from 'src/app/model/usermodel';
 import { CloudinaryService } from 'src/app/services/cloudinary.service';
 import { MessageToasterService } from 'src/app/services/message-toaster.service';
-import { UserService } from 'src/app/user.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-profile',

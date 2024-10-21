@@ -12,7 +12,7 @@ import { AllBlogsComponent } from './components/all-blogs/all-blogs.component';
 import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
 import { EmailForForgetPasswordComponent } from './components/email-for-forget-password/email-for-forget-password.component';
 import { NewPasswordComponent } from './components/new-password/new-password.component';
-import { authGuard } from './auth.guard';
+import { authGuard } from './guards/auth.guard';
 // import { authGuard } from './auth.guard';
 
 const routes: Routes = [ 
