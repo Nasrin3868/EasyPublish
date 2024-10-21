@@ -61,13 +61,13 @@ To set up the project locally, follow these steps:
 ## API Endpoints
 Here are some key API endpoints used in the project:
 
-- **POST /api/auth/register**: Register a new user
-- **POST /api/auth/login**: Log in a user
+- **POST /api/register**: Register a new user
+- **POST /api/login**: Log in a user
 - **GET /api/allblogs**: Retrieve all blogs
-- **POST /api/createblog**: Create a new blog (requires authentication)
-- **PUT /api/updateblog/:id**: Update an existing blog (requires authentication)
-- **DELETE /api/deleteblog/:id**: Delete a blog (requires authentication)
-- **GET /api/auth/verify-otp**: Verify OTP sent to user's email
+- **POST /api/user/createblog**: Create a new blog (requires authentication)
+- **PUT /api/user/updateblog/:id**: Update an existing blog (requires authentication)
+- **DELETE /api/user/deleteblog/:id**: Delete a blog (requires authentication)
+- **GET /api/verify-otp**: Verify OTP sent to user's email
 
 ## Authentication and Authorization
 - Users can register and log in to access create, update and delete blogs and edit profile details.
