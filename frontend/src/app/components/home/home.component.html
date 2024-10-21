@@ -1,0 +1,165 @@
+<app-header></app-header>
+<!-- hero seciton -->
+<div class="relative w-full h-[320px]" id="home">
+    <div class="absolute inset-0 opacity-70">
+        <img src="/assets/images/home.png" alt="Background Image" class="object-cover object-center w-full h-full" />
+    </div>
+    <div class="absolute inset-9 flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 mb-4 md:mb-0">
+            <h1 class="text-grey-700 font-medium text-4xl md:text-5xl leading-tight mb-2">Easy Publish</h1>
+            <!-- <p>{{value|custom}}</p> -->
+            <!-- <input [(ngModel)]="name" placeholder="type your name">
+            <p>{{name}}</p> -->
+            <!-- <app-all-blogs (notify)="onNotify()"></app-all-blogs> -->
+             
+             
+             <p class="font-regular text-xl mb-8 mt-4">In every word, a world unfolds – your stories, your voice, your journey. 
+                 Welcome to the place where ideas come alive.</p>
+                 <a (click)="addBlogs()"
+                 class="px-6 py-3 bg-[#c8a876] text-white font-medium rounded-full hover:bg-[#c09858]  transition duration-200">Create your own blog</a>
+        </div>
+    </div>
+</div>
+        
+        <!-- our services section -->
+        <section class="py-10" id="services">
+            <div class="container mx-auto px-4">
+                <ng-container *ngIf="blogs.length === 0; else your_blogs">
+                    <div class="flex flex-col items-center">
+                      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+                        There are no blogs yet.
+                      </h2>
+                      <button (click)="addBlogs()"
+                        class="px-6 py-3 bg-[#c8a876] text-white font-medium rounded-full hover:bg-[#c09858] transition duration-200">
+                        Be the first one
+                      </button>
+                    </div>
+                  </ng-container>
+                  
+                  <!-- Correct placement of the 'else' block with ng-template -->
+                  <ng-template #your_blogs>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Blogs</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                      <div *ngFor="let blog of blogs" class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img [src]="blog.image" alt="wheat flour grinding" class="w-full h-64 object-cover">
+                        <div class="p-6 text-center">
+                          <h3 class="text-xl font-medium text-gray-800 mb-2">{{ blog.title }}</h3>
+                          <h6>Author: {{ (blog.userId.firstname | titlecase) }} {{ (blog.userId.lastname | titlecase) }}</h6>
+                          <details>
+                            <summary>Read More</summary>
+                            {{ getTruncatedContent(blog.content) }}...
+                            <a class="text-blue-600 underline" (click)="displayBlog(blog._id)">Read More</a>
+                          </details>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                  
+            </div>
+        
+        
+            <!-- Center the More Blogs button -->
+            <div class="flex justify-center mt-8">
+                <button (click)="moreBlogs()" type="button"
+                class="flex items-center text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                More Blogs
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+                </button>
+            </div>
+        </section>
+
+<!-- about us -->
+<section class="bg-gray-100" id="aboutus">
+    <div class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+            <div class="max-w-lg">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">About Us</h2>
+                <p class="mt-4 text-gray-600 text-lg">
+                    At Easy Publish, we are committed to delivering innovative and tailored solutions that empower 
+                    individuals and businesses alike. Since our founding, our goal has been to bridge the gap 
+                    between technology and its users, creating seamless experiences that drive growth, efficiency, 
+                    and success. we take pride in understanding our clients' unique needs and delivering products that exceed expectations. 
+                    Our team of passionate experts works closely with clients across industries, 
+                    ensuring that every solution we provide is not only cutting-edge but also practical and scalable.
+                    
+                    What sets us apart is our customer-centric approach, where we prioritize building lasting relationships 
+                    based on trust and collaboration. At the heart of our work is a commitment to innovation and 
+                    excellence—continuously pushing boundaries to create technology that serves both current needs and 
+                    anticipates future challenges. We believe in the power of technology to transform lives, and we are 
+                    dedicated to making it accessible, intuitive, and impactful.
+                    
+                    Whether you're a startup looking for your first digital solution or an established enterprise seeking 
+                    to enhance your systems, Easy Publish is here to help you navigate the fast-evolving world of 
+                    technology. We’re not just your service provider; we’re your partner in achieving success. Join us as 
+                    we continue to shape the future with bold, forward-thinking solutions designed to meet the challenges 
+                    of tomorrow.
+                </p>
+            </div>
+            <div class="mt-12 md:mt-0">
+                <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86" alt="About Us Image" class="object-cover rounded-lg shadow-md">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- why us  -->
+<section class="text-gray-700 body-font mt-10">
+    <div class="flex justify-center text-3xl font-bold text-gray-800 text-center">
+        Why Us?
+    </div>
+    <div class="container px-5 py-12 mx-auto">
+        <div class="flex flex-wrap text-center justify-center">
+            <div class="p-4 md:w-1/4 sm:w-1/2">
+                <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+                    <div class="flex justify-center">
+                        <img src="https://image3.jdomni.in/banner/13062021/58/97/7C/E53960D1295621EFCB5B13F335_1623567851299.png?output-format=webp" class="w-32 mb-3">
+                    </div>
+                    <h2 class="title-font font-regular text-2xl text-gray-900">Latest Milling Machinery</h2>
+                </div>
+            </div>
+            
+            <div class="p-4 md:w-1/4 sm:w-1/2">
+                <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+                    <div class="flex justify-center">
+                        <img src="https://image2.jdomni.in/banner/13062021/3E/57/E8/1D6E23DD7E12571705CAC761E7_1623567977295.png?output-format=webp" class="w-32 mb-3">
+                    </div>
+                    <h2 class="title-font font-regular text-2xl text-gray-900">Reasonable Rates</h2>
+                </div>
+            </div>
+            
+            <div class="p-4 md:w-1/4 sm:w-1/2">
+                <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+                    <div class="flex justify-center">
+                        <img src="https://image3.jdomni.in/banner/13062021/16/7E/7E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp" class="w-32 mb-3">
+                    </div>
+                    <h2 class="title-font font-regular text-2xl text-gray-900">Time Efficiency</h2>
+                </div>
+            </div>
+            
+            <div class="p-4 md:w-1/4 sm:w-1/2">
+                <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+                    <div class="flex justify-center">
+                        <img src="https://image3.jdomni.in/banner/13062021/EB/99/EE/8B46027500E987A5142ECC1CE1_1623567959360.png?output-format=webp" class="w-32 mb-3">
+                    </div>
+                    <h2 class="title-font font-regular text-2xl text-gray-900">Expertise in Industry</h2>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray-100">
+    <app-footer></app-footer>
+</section>
+
+<script>
+    document.getElementById("hamburger").onclick = function toggleMenu() {
+        const navToggle = document.getElementsByClassName("toggle");
+        for (let i = 0; i < navToggle.length; i++) {
+          navToggle.item(i).classList.toggle("hidden");
+        }
+      };
+</script>
