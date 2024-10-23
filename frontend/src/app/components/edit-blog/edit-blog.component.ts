@@ -25,8 +25,8 @@ export class EditBlogComponent implements OnInit{
 
   blogId!:string
   blogDetails!:blogResponse
-  blogForm!:FormGroup
   originalFormData!:FormGroup
+  blogForm!:FormGroup
   selectedFile: File | null = null;
   topics: string[] = ['Technology', 'Travel', 'Food', 'Lifestyle', 'Other'];
   imagePreview: string | ArrayBuffer | null = null;

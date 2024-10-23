@@ -16,10 +16,10 @@
             <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Blogs</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div *ngFor="let blog of blogs"  class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img [src]="blog.image" alt="wheat flour grinding"
+                    <img (click)="displayBlog(blog._id)" [src]="blog.image" alt="wheat flour grinding"
                     class="w-full h-64 object-cover">
                     <div class="p-6 text-center">
-                        <h3 class="text-xl font-medium text-gray-800 mb-2">{{blog.title}}</h3>
+                        <button (click)="displayBlog(blog._id)" class="text-xl font-medium text-gray-800 mb-2">{{blog.title}}</button>
                         <h6>Author: {{(blog.userId.firstname|titlecase)}} {{(blog.userId.lastname|titlecase)}}</h6>
                         <details>
                             <summary>Read More</summary>

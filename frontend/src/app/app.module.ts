@@ -21,8 +21,6 @@ import { AllBlogsComponent } from './components/all-blogs/all-blogs.component';
 import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
 import { EmailForForgetPasswordComponent } from './components/email-for-forget-password/email-for-forget-password.component';
 import { NewPasswordComponent } from './components/new-password/new-password.component';
-import { AppHighlightDirective } from './app-highlight.directive';
-import { CustomPipe } from './custom.pipe';
 import { TokenInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
@@ -41,9 +39,7 @@ import { TokenInterceptor } from './interceptors/auth.interceptor';
     AllBlogsComponent,
     EditBlogComponent,
     EmailForForgetPasswordComponent,
-    NewPasswordComponent,
-    AppHighlightDirective,
-    CustomPipe
+    NewPasswordComponent
   ],
   imports: [
     BrowserModule,

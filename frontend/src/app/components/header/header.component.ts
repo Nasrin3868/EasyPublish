@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit{
   userToken!:string|null
+  menuOpen=false
   profileStatus:boolean=false
   constructor(
     private _router:Router
@@ -20,6 +21,9 @@ export class HeaderComponent implements OnInit{
       }else{
         this.profileStatus=false
       }
+  }
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;  // Toggles the menu open/close state
   }
 
   login(){

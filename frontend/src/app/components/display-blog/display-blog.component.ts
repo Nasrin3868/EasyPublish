@@ -1,5 +1,6 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { blogResponse } from 'src/app/model/usermodel';
 import { MessageToasterService } from 'src/app/services/message-toaster.service';
 import { UserService } from 'src/app/services/user.service';
@@ -16,6 +17,7 @@ export class DisplayBlogComponent implements OnInit{
     private _router:Router,
     private _route:ActivatedRoute,
     private _messageService:MessageToasterService,
+    private _viewportScroller: ViewportScroller
   ){}
 
   blogId!:string;
@@ -24,6 +26,12 @@ export class DisplayBlogComponent implements OnInit{
   edit:boolean=false
 
   ngOnInit(): void {
+    this._router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this._viewportScroller.scrollToPosition([0,0]);
+        // this.viewportScroller.scrollToPosition([0, 0]);  // Scroll to the top of the page
+      }
+    });
     this.userId=localStorage.getItem('accessedUser')
     this._route.params.subscribe(params => {
       this.blogId = params['_id'];

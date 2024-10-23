@@ -15,8 +15,8 @@
              
              <p class="font-regular text-xl mb-8 mt-4">In every word, a world unfolds – your stories, your voice, your journey. 
                  Welcome to the place where ideas come alive.</p>
-                 <a (click)="addBlogs()"
-                 class="px-6 py-3 bg-[#c8a876] text-white font-medium rounded-full hover:bg-[#c09858]  transition duration-200">Create your own blog</a>
+                 <button (click)="addBlogs()"
+                 class="px-6 py-3 bg-[#c8a876] text-white font-medium rounded-full hover:bg-[#c09858]  transition duration-200">Create your own blog</button>
         </div>
     </div>
 </div>
@@ -41,14 +41,14 @@
                     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Blogs</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                       <div *ngFor="let blog of blogs" class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img [src]="blog.image" alt="wheat flour grinding" class="w-full h-64 object-cover">
+                        <img (click)="displayBlog(blog._id)" [src]="blog.image" alt="wheat flour grinding" class="w-full h-64 object-cover">
                         <div class="p-6 text-center">
-                          <h3 class="text-xl font-medium text-gray-800 mb-2">{{ blog.title }}</h3>
+                          <button (click)="displayBlog(blog._id)" class="text-xl font-medium text-gray-800 mb-2">{{ blog.title }}</button>
                           <h6>Author: {{ (blog.userId.firstname | titlecase) }} {{ (blog.userId.lastname | titlecase) }}</h6>
                           <details>
                             <summary>Read More</summary>
                             {{ getTruncatedContent(blog.content) }}...
-                            <a class="text-blue-600 underline" (click)="displayBlog(blog._id)">Read More</a>
+                            <button class="text-blue-600 underline" (click)="displayBlog(blog._id)">Read More</button>
                           </details>
                         </div>
                       </div>
@@ -77,24 +77,27 @@
             <div class="max-w-lg">
                 <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">About Us</h2>
                 <p class="mt-4 text-gray-600 text-lg">
-                    At Easy Publish, we are committed to delivering innovative and tailored solutions that empower 
-                    individuals and businesses alike. Since our founding, our goal has been to bridge the gap 
-                    between technology and its users, creating seamless experiences that drive growth, efficiency, 
-                    and success. we take pride in understanding our clients' unique needs and delivering products that exceed expectations. 
-                    Our team of passionate experts works closely with clients across industries, 
-                    ensuring that every solution we provide is not only cutting-edge but also practical and scalable.
-                    
-                    What sets us apart is our customer-centric approach, where we prioritize building lasting relationships 
-                    based on trust and collaboration. At the heart of our work is a commitment to innovation and 
-                    excellence—continuously pushing boundaries to create technology that serves both current needs and 
-                    anticipates future challenges. We believe in the power of technology to transform lives, and we are 
-                    dedicated to making it accessible, intuitive, and impactful.
-                    
-                    Whether you're a startup looking for your first digital solution or an established enterprise seeking 
-                    to enhance your systems, Easy Publish is here to help you navigate the fast-evolving world of 
-                    technology. We’re not just your service provider; we’re your partner in achieving success. Join us as 
-                    we continue to shape the future with bold, forward-thinking solutions designed to meet the challenges 
-                    of tomorrow.
+                    Welcome to <b>Easy Publish</b>, your go-to platform for effortlessly creating, sharing, and exploring 
+                    a wide range of blogs! Whether you’re an experienced writer or someone who’s just looking to share 
+                    your thoughts and ideas, EasyPublish offers a simple and intuitive space to bring your content to 
+                    life. We believe that everyone has a unique story to tell, and with our user-friendly platform, 
+                    you can easily create, edit, and publish blogs that reach a wide audience.<br><br>
+
+                    At EasyPublish, we’re focused on making blogging accessible to all. You can dive right in and 
+                    browse through various blogs on different topics, from personal experiences and lifestyle tips 
+                    to more technical insights and professional advice. Not only can you explore other users’ blogs, 
+                    but once you register, you’ll have the power to create your own, with the flexibility to update, 
+                    edit, or delete them whenever you wish.<br><br>
+
+                    Our platform is designed to provide a seamless experience for all users, whether you’re reading 
+                    blogs, discovering new ideas, or writing your own. Each blog is thoughtfully categorized, making it 
+                    easy to find what interests you most. And if you’ve written something yourself, EasyPublish ensures 
+                    it gets the attention it deserves, allowing readers to engage with your content.<br><br>
+
+                    We’ve built a supportive and interactive community where readers and writers can connect through shared 
+                    interests, offering feedback and encouragement. Our mission is simple: to make publishing and 
+                    discovering blogs as easy as possible. Join EasyPublish today, share your voice with the world, and 
+                    become part of a growing community of writers and readers who are passionate about the power of words.
                 </p>
             </div>
             <div class="mt-12 md:mt-0">
@@ -116,7 +119,7 @@
                     <div class="flex justify-center">
                         <img src="https://image3.jdomni.in/banner/13062021/58/97/7C/E53960D1295621EFCB5B13F335_1623567851299.png?output-format=webp" class="w-32 mb-3">
                     </div>
-                    <h2 class="title-font font-regular text-2xl text-gray-900">Latest Milling Machinery</h2>
+                    <h2 class="title-font font-regular text-2xl text-gray-900">Engaging Content Creation</h2>
                 </div>
             </div>
             
@@ -125,7 +128,7 @@
                     <div class="flex justify-center">
                         <img src="https://image2.jdomni.in/banner/13062021/3E/57/E8/1D6E23DD7E12571705CAC761E7_1623567977295.png?output-format=webp" class="w-32 mb-3">
                     </div>
-                    <h2 class="title-font font-regular text-2xl text-gray-900">Reasonable Rates</h2>
+                    <h2 class="title-font font-regular text-2xl text-gray-900">Latest Blogging Platform</h2>
                 </div>
             </div>
             
@@ -134,7 +137,7 @@
                     <div class="flex justify-center">
                         <img src="https://image3.jdomni.in/banner/13062021/16/7E/7E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp" class="w-32 mb-3">
                     </div>
-                    <h2 class="title-font font-regular text-2xl text-gray-900">Time Efficiency</h2>
+                    <h2 class="title-font font-regular text-2xl text-gray-900">Time-Saving Features</h2>
                 </div>
             </div>
             
@@ -143,7 +146,7 @@
                     <div class="flex justify-center">
                         <img src="https://image3.jdomni.in/banner/13062021/EB/99/EE/8B46027500E987A5142ECC1CE1_1623567959360.png?output-format=webp" class="w-32 mb-3">
                     </div>
-                    <h2 class="title-font font-regular text-2xl text-gray-900">Expertise in Industry</h2>
+                    <h2 class="title-font font-regular text-2xl text-gray-900">Community and Support</h2>
                 </div>
             </div>
             
